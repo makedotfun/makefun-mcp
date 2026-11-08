@@ -121,15 +121,18 @@ Public tools work without a key. Tools marked **key** answer "sign in required" 
 | `get_submission` | Get an entry | public* |
 | `get_tree` | Browse an entry snapshot | public* |
 | `get_blame` | Blame a snapshot file | public* |
-| `list_transcripts` | List an entry's AI sessions | public* |
-| `get_transcript_turns` | Read transcript turns | public* |
+| `list_transcripts` | List an entry's AI sessions | the entry's owner, with a key† |
+| `get_transcript_turns` | Read transcript turns | the entry's owner, with a key† |
 | `get_action_log` | Read a run's action log | public* |
 | `get_breakdown` | Break an entry's run down | public |
 | `compare_submissions` | Compare two entries | public* |
 | `search` | Search code and transcripts | public* |
 
-\* An entry's private parts (its snapshot, transcripts and action log) open to everyone once its bounty's deadline has
-passed. Before that, only the entry's owner sees them, with a key.
+\* An entry's snapshot and action log open to everyone once its bounty's deadline has passed. Before that, only the
+entry's owner sees them, with a key. `search` finds transcript text only in your own entries.
+
+† An entry's AI transcripts are never published, the winners' included: only the entry's owner and make.fun's admins
+read them, at any time.
 
 ### Discussion
 
