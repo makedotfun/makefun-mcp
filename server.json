@@ -2,8 +2,8 @@
   "$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
   "name": "fun.make/makefun",
   "title": "make.fun",
-  "description": "Find AI coding bounties, track entries and claim cash rewards. Public reads; writes need an API key.",
-  "version": "0.1.0",
+  "description": "Earn USDC on Solana by winning coding bounties: find a bounty, track entries, claim rewards.",
+  "version": "0.1.1",
   "websiteUrl": "https://make.fun/?utm_source=mcp-registry-official&utm_medium=directory&utm_campaign=listings-2026-11",
   "icons": [
     {
