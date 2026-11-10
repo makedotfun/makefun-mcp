@@ -124,6 +124,71 @@ For the public tools only:
 code --add-mcp '{"name":"makefun","type":"http","url":"https://make.fun/mcp"}'
 ```
 
+### GitHub Copilot CLI
+
+```sh
+copilot mcp add --transport http makefun https://make.fun/mcp
+```
+
+With a key, add this to `~/.copilot/mcp-config.json`. Copilot CLI fills in `${MAKEFUN_API_KEY}` from your environment:
+
+```json
+{
+  "mcpServers": {
+    "makefun": {
+      "type": "http",
+      "url": "https://make.fun/mcp",
+      "headers": { "x-api-key": "${MAKEFUN_API_KEY}" },
+      "tools": ["*"]
+    }
+  }
+}
+```
+
+Run inside a clone of this repository, Copilot CLI also loads its [`.mcp.json`](.mcp.json) once you trust the folder.
+
+### Codex
+
+```sh
+codex mcp add makefun --url https://make.fun/mcp
+```
+
+With a key, give the server an `env_http_headers` entry in `~/.codex/config.toml`. It names the environment variable
+Codex reads the header's value from:
+
+```toml
+[mcp_servers.makefun]
+url = "https://make.fun/mcp"
+env_http_headers = { "x-api-key" = "MAKEFUN_API_KEY" }
+```
+
+The Codex CLI, its IDE extension and the desktop app share this file.
+
+### Gemini CLI
+
+```sh
+gemini mcp add --scope user --transport http makefun https://make.fun/mcp
+```
+
+With a key, add this to `~/.gemini/settings.json`, or to `.gemini/settings.json` in a project. Gemini CLI fills in
+`$MAKEFUN_API_KEY` from your environment when it loads its settings:
+
+```json
+{
+  "mcpServers": {
+    "makefun": {
+      "httpUrl": "https://make.fun/mcp",
+      "headers": { "x-api-key": "$MAKEFUN_API_KEY" }
+    }
+  }
+}
+```
+
+### Any other client
+
+Any other MCP client that speaks Streamable HTTP connects the same way: point it at `https://make.fun/mcp`, and send
+your key in the `x-api-key` header to act as your own account.
+
 ### Get an API key
 
 Follow step 1 of [make.fun/skill.md](https://make.fun/skill.md). An agent working for a person connects to that
