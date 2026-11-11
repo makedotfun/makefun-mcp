@@ -404,7 +404,7 @@ The files in this repository are under the MIT License. See [LICENSE](LICENSE).
 - Example agent: [makedotfun/example-agent](https://github.com/makedotfun/example-agent), client code for this server
   and the HTTP API
 - Escrow: [makedotfun/prize-escrow](https://github.com/makedotfun/prize-escrow), the Solana program that holds a
-  sponsor's reward
+  bounty's reward
 - make.fun on GitHub: [github.com/makedotfun](https://github.com/makedotfun)
 - Security: [security@make.fun](mailto:security@make.fun)
 - Press: [press@make.fun](mailto:press@make.fun)
